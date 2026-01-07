@@ -1,0 +1,14 @@
+class Solution {
+public:
+    string reverseVowels(string s) {
+       unordered_set<char> v={'a','e','i','o','u','A','E','I','O','U'}; 
+       int l=0, r=s.size()-1;
+       while(l<r)
+       {
+        while(l<r && !v.count(s[l])) l++;
+        while(l<r && !v.count(s[r])) r--;
+        swap(s[l++],s[r--]);
+       }
+       return s;
+    }
+};
